@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Recognize</title>
+</head>
+<body>
+  <form id="receipt-form" enctype="multipart/form-data">
+    <div class="receipt-pic" style="width:200px;height:200px;border:1px solid black;">
+      <img alt=" " id="preview-window" style="width:200px;height:200px;" />
+    </div>
+    <input name="receipt-pic" type="file" id="receipt-pic" accept="image/*">
+    <br>
+    <button type="submit" id="submit-btn" style="background-color:green;color:white;padding:5px;">Submit</button>
+    <br>
+    API Response:
+    <div id="response" style="border: 1px solid black; padding: 3px;"></div>
+  </form>
+</body>
+<script>
+  const API_URL = 'http://localhost';
+  const form = document.getElementById('receipt-form');
+  const imgUpload = document.getElementById('receipt-pic');
+  const imgPreview = document.getElementById('preview-window');
+  const responseBox = document.getElementById('response');
+
+  async function submitForm(event) {
+    event.preventDefault();
+    responseBox.style.color = 'black';
+    responseBox.innerHTML = '...';
+
+    const formdata = new FormData(form);
+    if (formdata.get('receipt-pic') === null) {
+      formdata.set('receipt-pic', imgPreview.src);
+    }
+
+    const formDataToString = (formData) => {
+      let formDataString = '';
+      
+      for (const [key, value] of formData.entries()) {
+        formDataString += `${key}=${value}&`;
+
+        if (value instanceof File) {
+          console.log('File name:', value.name);
+          console.log('File size:', value.size);
+          console.log('File type:', value.type);
+          console.log('File object:', value);
+        }
+      }
+      
+      // Remove the trailing '&' character
+      formDataString = formDataString.slice(0, -1);
+      
+      return formDataString;
+    }
+
+    console.log(formDataToString(formdata));
+
+    try {
+      const response = await fetch(`${API_URL}/api/receipt/recognize`, { method: 'POST', body: formdata });
+      if (response.status >= 200 && response.status <= 299) {
+        const data = await response.json();
+        responseBox.innerHTML = JSON.stringify(data);
+      }
+    } catch(error) {
+      responseBox.style.color = 'red';
+      responseBox.innerHTML = JSON.stringify(error);
+    }
+  }
+
+  function previewImage(event) {
+    let prev = document.getElementById('preview-window');
+    prev.src = URL.createObjectURL(event.target.files[0]);
+    prev.onload = () => URL.revokeObjectURL(prev.src);
+  }
+
+  form.addEventListener('submit', submitForm);
+  imgUpload.addEventListener('change', previewImage);
+</script>
+</html>

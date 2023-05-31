@@ -1,0 +1,63 @@
+.add-section-button button {
+  padding: 10px 20px;
+  width: 175px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.budget-display {
+  margin-bottom: 20px;
+}
+
+.budget-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+.budget-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.edit-button, .delete-button {
+  color: #007bff;
+  font-weight: bold;
+}
+
+.delete-button {
+  margin-left: 10px;
+  padding: 0px;
+  background-color: transparent;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.budget-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.budget-limit {
+  font-size: 32px;
+  font-weight: bold;
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+
+.edit-button {
+  padding: 0;
+  background-color: transparent;
+  align-items: center;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}

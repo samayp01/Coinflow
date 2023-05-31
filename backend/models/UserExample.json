@@ -1,0 +1,44 @@
+{
+  
+  "id": "recipient@example.com",
+  "jwt": "",
+  "meta": {
+    "lastLogin": "2018-11-01T00:00:00.000Z"
+  },
+  "cycles": {
+    "nov2018": {
+      "budget": {
+        "limit": 50,
+        "warnLimit": 40
+      },
+      "expenses": [
+        {
+          "id": 1,
+          "merchant": "string",
+          "date": "2018-11-10T00:00:00.000Z",
+          "amount": 12
+        },
+        {
+          "id": 2,
+          "merchant": "string",
+          "date": "2018-11-17T00:00:00.000Z",
+          "amount": 7
+        }
+      ]
+    },
+    "oct2020": {
+      "budget": {
+        "limit": 50,
+        "warnLimit": 40
+      },
+      "expenses": [
+        {
+          "id": 1,
+          "merchant": "string",
+          "date": "2020-10-07T00:00:00.000Z",
+          "amount": 27
+        }
+      ]
+    }
+  }
+}
