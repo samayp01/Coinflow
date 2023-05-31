@@ -34,7 +34,7 @@ The application is currently in development. The following features are availabl
 - **Budget management**: Users can set monthly budgets and receive email notifications when they are close to exceeding their budget.
 
 ---
-## Technologies Used
+## Technologies
 This project makes use of several technologies to provide a comprehensive solution. The key technologies used in this project include:
 
 **Frontend**
