@@ -1,0 +1,19 @@
+.login-banner {
+  margin-top: 20vh;
+  margin-bottom: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.app-name {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #333;
+}
+
+.subtitle {
+  font-size: 1.2rem;
+  color: #777;
+}
