@@ -1,0 +1,77 @@
+.expense-list {
+  width: 100%;
+  max-width: 600px;
+  margin-top: 20px;
+  box-shadow: 0px 0px 5px #ccc;
+  border-radius: 5px;
+}
+
+p {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.date-selector {
+  display: flex;
+  justify-content: center;
+  
+  border-radius: 5px;
+  box-shadow: 0px 0px 5px #ccc;
+  width: 70%;
+  margin: auto;
+  margin-bottom: 40px;
+  margin-top: 20px;
+}
+
+.date-selector input[type="month"] {
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.expense-entry {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-bottom: 1px solid #ccc;
+}
+
+.expense-entry .entry-info {
+  flex-grow: 1;
+}
+
+.expense-entry .entry-info .merchant {
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.expense-entry .entry-info .date {
+  font-size: 14px;
+  color: #888;
+}
+
+.expense-entry .entry-amount {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.expense-entry .entry-buttons {
+  display: flex;
+}
+
+.expense-entry .entry-buttons button {
+  margin-left: 5px;
+  padding: 5px;
+  font-size: 14px;
+  border: none;
+  border-radius: 4px;
+  background-color: transparent;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.expense-entry .entry-buttons button:hover {
+  background-color: #f2f2f2;
+}

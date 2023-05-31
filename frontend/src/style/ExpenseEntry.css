@@ -1,0 +1,48 @@
+.display-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.entry-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  padding: 10px;
+  border: none;
+  border-bottom: 2px solid #ccc;
+  background-color: transparent;
+  width: 100%;
+  user-select: none;
+  cursor: pointer;
+}
+
+.merchant-and-date {
+  display: flex;
+  flex-direction: column;
+  margin-right: 10px;
+}
+
+.field {
+  margin-bottom: 5px;
+}
+
+.field:first-child {
+  font-weight: bold;
+}
+
+.entry-item > #amount {
+  font-size: 20px;
+  padding: 0;
+  margin-left: 20px;
+}
+
+.entry-item > .delete-button {
+  background-color: transparent;
+  padding: 10px;
+  padding-right: 0;
+  margin-right: 0;
+  border-radius: 20%;
+  color: #f08c79;
+}
